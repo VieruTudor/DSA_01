@@ -1,0 +1,8 @@
+.vs
+Debug
+*.sln
+.gitignore
+DSA_01/.idea
+DSA_01/*.txt
+DSA_01/cmake-build-debug
+

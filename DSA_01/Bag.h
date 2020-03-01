@@ -10,9 +10,11 @@ class Bag {
 
 private:
 	//TODO - Representation
-	int* bag;
-	int bagSize;
-	int minValue, maxValue;
+	int* bag; // the bag itself
+	int bagCapacity; // number of slots available in bag[]
+	int bagSize; // how many elements are in the bag
+	int minValue; // the min element present in the bag
+	int maxValue; // the max element present in the bag
 	
 
 	//DO NOT CHANGE THIS PART
