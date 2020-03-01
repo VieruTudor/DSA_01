@@ -17,35 +17,7 @@ Bag::Bag() {
 
 void Bag::add(TElem elem) {
 	//TODO - Implementation
-	if (elem > maxValue) {
-		int newBagSize = bagSize + elem - maxValue;
-		int* newBag = new int[newBagSize];
-
-		for (int i = 0; i < bagSize; i++)
-			newBag[i] = this->bag[i];
-
-		newBag[newBagSize - 1] = 1;
-
-		delete bag;
-		this->bag = newBag;
-		bagSize = newBagSize;
-	}
-	else if (elem < minValue) {
-		int shift = abs(minValue - elem);
-		int newBagSize = bagSize + shift;
-		int* newBag = new int[newBagSize];
-
-		for (int i = 0; i < bagSize; i++)
-			newBag[shift + i] = bag[i];
-
-		newBag[0] = 1;
-
-		delete bag;
-		this->bag = newBag;
-		bagSize = newBagSize;
-	}
-	else
-		bag[elem]++;
+	
 
 
 
