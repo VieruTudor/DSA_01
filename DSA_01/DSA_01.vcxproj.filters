@@ -15,33 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Bag\App.cpp">
+    <ClCompile Include="App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Bag\Bag.cpp">
+    <ClCompile Include="Bag.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Bag\BagIterator.cpp">
+    <ClCompile Include="BagIterator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Bag\ExtendedTest.cpp">
+    <ClCompile Include="ExtendedTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Bag\ShortTest.cpp">
+    <ClCompile Include="ShortTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Bag\Bag.h">
+    <ClInclude Include="Bag.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Bag\BagIterator.h">
+    <ClInclude Include="BagIterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Bag\ExtendedTest.h">
+    <ClInclude Include="ExtendedTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Bag\ShortTest.h">
+    <ClInclude Include="ShortTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
