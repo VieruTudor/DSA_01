@@ -1,4 +1,4 @@
-#include <assert.h>
+﻿#include <assert.h>
 #include "Bag.h"
 #include "ExtendedTest.h"
 #include "BagIterator.h"
@@ -11,6 +11,7 @@ using namespace std;
 void testIteratorSteps(Bag& bag) {
 	int count = 0;
 	BagIterator bi = bag.iterator();
+	/// Crăpare 2
 	while (bi.valid()) {
 		count++;
 		bi.next();
@@ -32,7 +33,7 @@ void testCreate() {
 	for (int i = -10; i < 10; i++) {
 		assert(b.nrOccurrences(i) == 0);
 	}
-
+	
 	BagIterator it = b.iterator(); 
 	assert(it.valid() == false);
 }
@@ -91,6 +92,7 @@ void testAdd() {
 		b.add(i);
 	}
 	assert(b.size() == 20240);
+	/// Crăpare #2 vezi funcția
 	testIteratorSteps(b);
 }
 
@@ -367,6 +369,7 @@ void testAllExtended() {
 	testRemove();
 	testIterator();
 	testQuantity();
+	
 
 
 }

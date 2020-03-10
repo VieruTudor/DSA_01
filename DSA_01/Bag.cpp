@@ -15,14 +15,15 @@ Bag::Bag() {
     /// abs(elem - minValue) MAGIC FORMULA !!!
 }
 
-
+/// case 1 : O(1)
+/// case 2 : O(newBagCapacity), where newBagCapacity is the size of the new array
+/// case 3 : O(newBagCapacity)
 void Bag::add(TElem elem) {
     // TODO
-    // 4 big cases
-    // 1. size is 0, then you can set minValue = maxValue = elem and put 1 there
-    // 2. elem is in [minValue, maxValue] => increment the value of the corresponding (PAY ATTENTION) index
-    // 3. elem is larger than maxValue => need enlargement of bag[] (how many extra elements?) and copy the existing elems
-    // 4. elem is smaller than minValue => need enlargement of bag[] and copying the elems (with an offset, which is the offset?)
+    // 3 CASES
+    // 1. elem is in [minValue, maxValue] => increment the value of the corresponding (PAY ATTENTION) index
+    // 2. elem is larger than maxValue => need enlargement of bag[] (how many extra elements?) and copy the existing elems
+    // 3. elem is smaller than minValue => need enlargement of bag[] and copying the elems (with an offset, which is the offset?)
     
     if (elem >= minValue && elem <= maxValue)
     {
@@ -68,7 +69,7 @@ void Bag::add(TElem elem) {
     }
 
 }
-
+/// O(1)
 bool Bag::remove(TElem elem) {
     // TODO
     // you should check if the element is in your stored interval
@@ -88,7 +89,7 @@ bool Bag::remove(TElem elem) {
     return true;
 }
 
-
+/// O(1)
 bool Bag::search(TElem elem) const {
     // TODO
     // you should check if the element is in your stored interval
@@ -105,17 +106,19 @@ bool Bag::search(TElem elem) const {
 
 
 }
-
+/// O(1)
 int Bag::nrOccurrences(TElem elem) const {
     // TODO
     // you should check if the element is in your stored interval
     // if it is, then its number of occurences is stored in bag[]
     //     note: bag[elem] is incorrect, try to find the real index which you can refer to
     // if it's not, then for sure it appears 0 times in the bag (doesn't appear at all)
+    if (elem < minValue || elem > maxValue)
+        return false;
     return bag[abs(elem - minValue)];
 }
 
-
+/// O(1)
 int Bag::size() const {
     // TODO
     // "ce-i in mana nu-i minciuna"
@@ -124,7 +127,7 @@ int Bag::size() const {
     return bagSize;
 }
 
-
+/// O(1)
 bool Bag::isEmpty() const {
     // TODO
     // try to refer to the size of the bag
