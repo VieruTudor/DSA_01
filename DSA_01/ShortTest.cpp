@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "Bag.h"
 #include "BagIterator.h"
-
+#include <iostream>
 
 void testAll() { 
 	Bag b;
@@ -24,6 +24,9 @@ void testAll() {
 	assert(b.remove(6) == false);
 	assert(b.size() == 6);
 	assert(b.nrOccurrences(1) == 1);
+
+	
+
 	/// Crăpare #1
 	BagIterator it = b.iterator();
 	it.first();
