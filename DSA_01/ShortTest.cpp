@@ -27,7 +27,7 @@ void testAll() {
 
 	
 
-	/// Crăpare #1
+	/// Crăpare #1 - FIXED
 	BagIterator it = b.iterator();
 	it.first();
 	while (it.valid()) {

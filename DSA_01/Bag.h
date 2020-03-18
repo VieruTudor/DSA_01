@@ -23,6 +23,8 @@ public:
 	//constructor
 	Bag();
 
+	void Print();
+
 	//adds an element to the bag
 	void add(TElem e);
 

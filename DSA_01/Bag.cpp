@@ -15,6 +15,10 @@ Bag::Bag() {
     /// abs(elem - minValue) MAGIC FORMULA !!!
 }
 
+void Bag::Print() {
+    for (int i = 0; i < bagCapacity; i++)
+        cout << bag[i] << " ";
+}
 /// case 1 : O(1)
 /// case 2 : O(newBagCapacity), where newBagCapacity is the size of the new array
 /// case 3 : O(newBagCapacity)
@@ -24,7 +28,6 @@ void Bag::add(TElem elem) {
     // 1. elem is in [minValue, maxValue] => increment the value of the corresponding (PAY ATTENTION) index
     // 2. elem is larger than maxValue => need enlargement of bag[] (how many extra elements?) and copy the existing elems
     // 3. elem is smaller than minValue => need enlargement of bag[] and copying the elems (with an offset, which is the offset?)
-    
     if (elem >= minValue && elem <= maxValue)
     {
         bag[abs(elem - minValue)]++;
@@ -84,9 +87,8 @@ bool Bag::remove(TElem elem) {
     {
         bag[abs(elem - minValue)]--;
         bagSize--;
-    }
-        
-    return true;
+        return true;
+    } 
 }
 
 /// O(1)
@@ -95,14 +97,16 @@ bool Bag::search(TElem elem) const {
     // you should check if the element is in your stored interval
     // if it is, then check if appears for 1 or more times
     // if it's not, then it's clear it won't ever be found  
-    if (elem < minValue || elem > maxValue)
+    if (elem < minValue)
+        return false;
+    if (elem > maxValue)
         return false;
     else
     {
-        if (bag[abs(elem - minValue)] == 1)
+        if (bag[abs(elem - minValue)] >= 1)
             return true;
-        return false;
     }
+    return false;
 
 
 }
@@ -122,8 +126,6 @@ int Bag::nrOccurrences(TElem elem) const {
 int Bag::size() const {
     // TODO
     // "ce-i in mana nu-i minciuna"
-    // so, if you keep the size separately, doesn't make it faster
-    // than counting stuff?
     return bagSize;
 }
 

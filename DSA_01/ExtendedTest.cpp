@@ -11,11 +11,12 @@ using namespace std;
 void testIteratorSteps(Bag& bag) {
 	int count = 0;
 	BagIterator bi = bag.iterator();
-	/// Crăpare 2
+	
 	while (bi.valid()) {
 		count++;
 		bi.next();
 	}
+	cout << count << " " << bag.size() << "\n";
 	assert(count == bag.size());
 }
 
@@ -34,7 +35,8 @@ void testCreate() {
 		assert(b.nrOccurrences(i) == 0);
 	}
 	
-	BagIterator it = b.iterator(); 
+	BagIterator it = b.iterator();
+	it.print();
 	assert(it.valid() == false);
 }
 
@@ -92,7 +94,6 @@ void testAdd() {
 		b.add(i);
 	}
 	assert(b.size() == 20240);
-	/// Crăpare #2 vezi funcția
 	testIteratorSteps(b);
 }
 
@@ -115,6 +116,7 @@ void testRemove() {
 			assert(b.remove(i) == false);
 		}
 	}
+
 	testIteratorSteps(b);
 	assert(b.size() == 0);
 	for (int i = -100; i <= 100; i = i + 2) { 
